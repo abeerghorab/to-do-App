@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:todo2/model/task.dart';
 import 'package:todo2/my_theme.dart';
 
 class ItemTaskListWidget extends StatelessWidget {
+  Task task;
+  ItemTaskListWidget({required this.task});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,11 +25,11 @@ class ItemTaskListWidget extends StatelessWidget {
           Column(
             children: [
               Text(
-                "Task Title",
+                task.title,
                 style: Theme.of(context).primaryTextTheme.headline2,
               ),
               Text(
-                "Descriptiob",
+                task.description,
                 style: Theme.of(context).primaryTextTheme.subtitle2,
               ),
             ],
